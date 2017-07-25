@@ -25,10 +25,10 @@ TEST_PARAM      = 0;
 % Flag to export results
 VTK_EXPORT      = 1;
 % Output directory
-OUTPUT          = '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/vtk/';
+OUTPUT          = './vtk/';
 % Output directory where parameters EXPORT_PARAM=1 are saved 
-OutputDir       = '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/vtk/';
-OutputDirectory = '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/vtk/';
+OutputDir       = './vtk/';
+OutputDirectory = './vtk/';
 % Flag to import the dimensionless radius (to do that TEST_PARAM must be equal to 0 and parameters P U d k mu must be left)
 IMPORT_RADIUS   = 0;
 % Flag to export radius and conductivity of network in vtk file
@@ -76,9 +76,9 @@ NOISED_T   = '0';
 % Path to import the 3d mesh
 MESH_FILET = ' '; 
 % Path to import the 1d list of points
-MESH_FILEV = '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/rattm93b_norm50.pts'
-MESH_FILEV_TRANSP = '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/rattm93b_norm50_transp.pts';
-RFILE= '/u/laurino/Desktop/Release2_0_and_nano_TesiAnnagiulia/src/C_Drugdelivery/radius_rattm93b_norm50.pts'
+MESH_FILEV = './rattm93b_norm50.pts'
+MESH_FILEV_TRANSP = './rattm93b_norm50_transp.pts';
+RFILE= './radius_rattm93b_norm50.pts'
 %===================================
 %  GETFEM DESCRIPTORS
 %===================================
