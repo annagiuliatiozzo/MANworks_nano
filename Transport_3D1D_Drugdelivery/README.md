@@ -1,11 +1,31 @@
 # Mixed Finite Element Methods for Coupled 3D/1D Fluid Problems
+
 #### *Politecnico di Milano* (ITALY)
 
-**Author** : Domenico Notaro 
+**Author** : Annagiulia Tiozzo and Federica Laurino
+
+**Mailto** : <annagiulia92t@gmail.com>; <federica.laurino@polimi.it>
+
+**Date**   : July 2017
+
+
+#### *Previous projects* 
+**Author** : Domenico Notaro
 
 **Mailto** : <domenico.not@gmail.com>
 
-**Date**   : March 2016
+**Date** : March 2016
+
+**Github Page** : https://github.com/domeniconotaro/PACS
+
+**Author** : Stefano Brambilla
+
+**Mailto** : <s.brambilla93@gmail.com>
+
+**Date** : September 2016
+
+**Github Page** : https://github.com/stefano-brambilla-853558/MANworks
+
 
 -------------------------------------------------------
 ## How to install and run the program
@@ -18,7 +38,6 @@
 - `lib/`     : Main library (to be generated)
 
 - `src/`     : Example sources
-  - `C_Drugdelivery/` : solve the drug delivery 3D/1D system
 
 - `config.mk`: Specify the variable GETFEM_PREFIX for GetFEM++ library
 
@@ -65,12 +84,6 @@ $ make -C include/
 ``` 
 Then, it calls the inner makefiles provided for all examples.
 
-It is also possible to build a single example, e.g. "1_uncoupled", with:
-``` 
-$ make library
-
-$ make -C src/1_uncoupled
-``` 
 
 BEWARE: 
 If you want non-optimized program type:
@@ -129,7 +142,7 @@ In addition the external Makefile (./Makefile) has the following options:
 ## RUN EXAMPLES
 To run a specif example, go to the related subdirectory
 ``` 
-$ cd src/3_Yshaped
+$ cd src
 ``` 
 Build the program
 ``` 
@@ -159,7 +172,7 @@ Each program contains the file input.param that specifies
 
 - Boundary conditions. You can choose an arbitrary combination of
   Dirichlet-type conditions on pt and/or Robin-type conditions
-  on the flux, namely:
+  on the flux for the fluid problem, namely:
 
   % Faces:   x=0  x=L  y=0  y=L  z=0  z=L
 
@@ -171,6 +184,23 @@ Each program contains the file input.param that specifies
 
   BCvalue = '0.0  0.0  0.0  0.0  0.0  0.0'
   
+  You can choose an arbitrary combination of
+  Dirichlet-type conditions on pt and/or Robin-type conditions
+  on the flux for the transport problem, namely:
+
+  % Faces:   x=0  x=L  y=0  y=L  z=0  z=L
+
+  % BC labels (DIR / MIX)
+
+  BClabel_transp = 'MIX  MIX  MIX  MIX  MIX  MIX'
+
+  % BC values
+
+  BCvalue_transp = '0.0  0.0  0.0  0.0  0.0  0.0'
+  
+  % Coefficient for MIX condition in tissue
+  
+  BETAtissue_transp= 1.0E-5
   
 BEWARE: All paths in file param must be ABSOLUTE
 
@@ -182,4 +212,3 @@ Processor  : Intel® Core™ i5-2410M CPU @ 2.30GHz × 4
 Compiler   : g++-4.8
 
 GetFEM lib : 5.0
-
