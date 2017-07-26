@@ -83,7 +83,7 @@ the Makefile in `include/`:
 $ make -C include/
 ``` 
 Then, it calls the inner makefiles provided for all examples.
-``` 
+
 
 BEWARE: 
 If you want non-optimized program type:
