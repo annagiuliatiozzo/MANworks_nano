@@ -205,11 +205,6 @@ Each program contains the file input.param that specifies
 BEWARE: All paths in file param must be ABSOLUTE
 
 ##  DEV ENVIRONMENT
-OS         : Ubuntu 14.04 LTS 64-bit
 
-Processor  : Intel® Core™ i5-2410M CPU @ 2.30GHz × 4 
-
-Compiler   : g++-4.8
-
-GetFEM lib : 5.0
+GetFEM lib : 5.1
 
